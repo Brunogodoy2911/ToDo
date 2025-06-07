@@ -12,45 +12,48 @@ import ButtonIcon from "./components/button-icon";
 import InputText from "./components/input-text";
 import InputCheckbox from "./components/input-checkbox";
 import Card from "./components/card";
+import Container from "./components/container";
 
 export default function App() {
   return (
-    <div className="grid gap-10">
-      <div className="flex gap-1">
-        <Icon svg={TrashIcon} className="fill-green-base" />
-        <Icon svg={CheckIcon} />
-        <Icon svg={PencilIcon} />
-        <Icon svg={PlusIcon} />
-        <Icon svg={SpinnerIcon} animate />
-        <Icon svg={XIcon} />
-      </div>
+    <Container>
+      <div className="grid gap-10">
+        <div className="flex gap-1">
+          <Icon svg={TrashIcon} className="fill-green-base" />
+          <Icon svg={CheckIcon} />
+          <Icon svg={PencilIcon} />
+          <Icon svg={PlusIcon} />
+          <Icon svg={SpinnerIcon} animate />
+          <Icon svg={XIcon} />
+        </div>
 
-      <div className="flex gap-2">
-        <Badge variant="secondary">5</Badge>
-        <Badge variant="primary">2 de 5</Badge>
-      </div>
+        <div className="flex gap-2">
+          <Badge variant="secondary">5</Badge>
+          <Badge variant="primary">2 de 5</Badge>
+        </div>
 
-      <div className="flex gap-2">
-        <Button icon={PlusIcon}>Nova Tarefa</Button>
-      </div>
+        <div className="flex gap-2">
+          <Button icon={PlusIcon}>Nova Tarefa</Button>
+        </div>
 
-      <div className="flex gap-1">
-        <ButtonIcon icon={TrashIcon} />
-        <ButtonIcon icon={TrashIcon} variant="secondary" />
-        <ButtonIcon icon={TrashIcon} variant="tertiary" />
-      </div>
+        <div className="flex gap-1">
+          <ButtonIcon icon={TrashIcon} />
+          <ButtonIcon icon={TrashIcon} variant="secondary" />
+          <ButtonIcon icon={TrashIcon} variant="tertiary" />
+        </div>
 
-      <div className="flex gap-1">
-        <InputText />
-      </div>
+        <div className="flex gap-1">
+          <InputText />
+        </div>
 
-      <div className="flex gap-1">
-        <InputCheckbox />
-      </div>
+        <div className="flex gap-1">
+          <InputCheckbox />
+        </div>
 
-      <div className="flex gap-1">
-        <Card size="md"> Olá Mundo</Card>
+        <div className="flex gap-1">
+          <Card size="md"> Olá Mundo</Card>
+        </div>
       </div>
-    </div>
+    </Container>
   );
 }

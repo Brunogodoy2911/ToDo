@@ -5,7 +5,8 @@ import PencilIcon from "./assets/icons/PencilSimple-Regular.svg?react";
 import PlusIcon from "./assets/icons/Plus-Regular.svg?react";
 import SpinnerIcon from "./assets/icons/Spinner.svg?react";
 import XIcon from "./assets/icons/X-Regular.svg?react";
-import Icon from "./components/Icon";
+import Icon from "./components/icon";
+import Badge from "./components/badge";
 
 export default function App() {
   return (
@@ -17,6 +18,11 @@ export default function App() {
         <Icon svg={PlusIcon} />
         <Icon svg={SpinnerIcon} animate />
         <Icon svg={XIcon} />
+      </div>
+
+      <div className="flex gap-2">
+        <Badge variant="secondary">5</Badge>
+        <Badge variant="primary">2 de 5</Badge>
       </div>
     </div>
   );

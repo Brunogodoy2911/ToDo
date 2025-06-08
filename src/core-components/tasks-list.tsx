@@ -1,7 +1,7 @@
 import Button from "../components/button";
 import PlusIcon from "../assets/icons/Plus-Regular.svg?react";
 import { TaskItem } from "./task-item";
-import useTask from "../hooks/use-taks";
+import useTask from "../hooks/use-task";
 import useTasks from "../hooks/use-tasks";
 import { TaskState } from "../models/task";
 

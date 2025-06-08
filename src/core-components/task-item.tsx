@@ -10,6 +10,7 @@ import React from "react";
 import InputText from "../components/input-text";
 import { TaskState, type Task } from "../models/task";
 import { cx } from "class-variance-authority";
+import useTasks from "../hooks/use-tasks";
 
 interface TaskItemProps {
   task: Task;
@@ -19,7 +20,8 @@ export function TaskItem({ task }: TaskItemProps) {
   const [isEditing, setIsEditing] = React.useState(
     task?.state === TaskState.Creating
   );
-  const [taskTitle, setTaskTitle] = React.useState("");
+  const [taskTitle, setTaskTitle] = React.useState(task.title || "");
+  const { updateTask } = useTasks();
 
   function handleEditTask() {
     setIsEditing(true);
@@ -36,7 +38,7 @@ export function TaskItem({ task }: TaskItemProps) {
   function handleSaveTask(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     console.log({ id: task.id, title: task.title });
-
+    updateTask(task.id, { title: taskTitle });
     setIsEditing(false);
   }
 
@@ -68,6 +70,7 @@ export function TaskItem({ task }: TaskItemProps) {
       ) : (
         <form onSubmit={handleSaveTask} className="flex items-center gap-4">
           <InputText
+            value={taskTitle}
             className="flex-1"
             onChange={handleChangeTaskTitle}
             required

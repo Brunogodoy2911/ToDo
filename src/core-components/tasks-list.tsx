@@ -8,8 +8,6 @@ export default function TasksList() {
   const { tasks } = useTask();
   const { prepareTask } = useTasks();
 
-  console.log(tasks);
-
   function handleNewTask() {
     prepareTask();
   }
@@ -22,10 +20,9 @@ export default function TasksList() {
         </Button>
       </section>
       <section className="space-y-2">
-        <TaskItem />
-        <TaskItem />
-        <TaskItem />
-        <TaskItem />
+        {tasks.map((task) => (
+        <TaskItem key={task.id} task={task} />
+        ))}
       </section>
     </>
   );

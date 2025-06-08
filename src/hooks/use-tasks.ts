@@ -32,9 +32,14 @@ export default function useTasks() {
     );
   }
 
+  function deleteTask(id: string) {
+    setTasks(tasks.filter((task) => task.id !== id));
+  }
+
   return {
     prepareTask,
     updateTask,
     updateTaskStatus,
+    deleteTask,
   };
 }
